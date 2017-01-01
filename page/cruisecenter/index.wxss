@@ -38,5 +38,5 @@ text{
     display: block;
 }
 swiper{
-    height:400rpx;
+    
 }

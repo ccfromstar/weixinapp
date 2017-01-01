@@ -67,8 +67,12 @@
       "page/API/get-location/get-location",
       "page/API/open-location/open-location",
 
-      "page/cruisecenter/wifi/wifi"
-
+      "page/cruisecenter/wifi/wifi",
+      "page/cruisecenter/query/query",
+      "page/cruisecenter/vip/vip",
+      "page/cruisecenter/guide/guide",
+      "page/cruisecenter/policy/policy",
+      "page/cruisecenter/note/note"
   ],
   "window": {
     "navigationBarTextStyle": "#D9F3FF",
@@ -77,25 +81,35 @@
     "backgroundColor": "#fbf9fe"
   },
   "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
+    "color": "#999999",
+    "selectedColor": "#28528E",
+    "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [{
       "pagePath": "page/cruisecenter/index",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "邮轮中心"
+      "iconPath": "image/home_gray@3x.png",
+      "selectedIconPath": "image/home_blue@3x.png",
+      "text": "首页"
     },{
       "pagePath": "page/component/index",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "组件"
-    }, {
+      "iconPath": "image/list_gray@3x.png",
+      "selectedIconPath": "image/list_blue@3x.png",
+      "text": "行业动态"
+    },{
+      "pagePath": "page/component/index",
+      "iconPath": "image/shop_gray@3x.png",
+      "selectedIconPath": "image/shop_blue@3x.png",
+      "text": "免税购物"
+    },{
+      "pagePath": "page/component/index",
+      "iconPath": "image/wating_black@3x.png",
+      "selectedIconPath": "image/wating@3x.png",
+      "text": "邮轮宝典"
+    },{
       "pagePath": "page/API/index/index",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "接口"
+      "iconPath": "image/people_gray@3x.png",
+      "selectedIconPath": "image/people_blue@3x.png",
+      "text": "个人中心"
     }]
   },
   "networkTimeout": {

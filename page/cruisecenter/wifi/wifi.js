@@ -3,10 +3,11 @@ Page({
   data: {
   },
   onLoad: function () {
+    /*  
     wx.request({
-        url: 'http://www.cruisesh.com/static/getByName', //仅为示例，并非真实的接口地址
+        url: 'https://service.huiyoulun.com:80/services/getOption?id=24&openid=odZ6Yt8p5aYs5tOoWHosE8IyyzWI', 
         data: {
-            name: 'WIFI租赁'
+            
         },
         header: {
             'content-type': 'application/json'
@@ -17,7 +18,7 @@ Page({
             var that = this;
             WxParse.wxParse('article', 'html', article, that,5);
         }
-    })
+    })*/
   }
 })
 
