@@ -191,6 +191,9 @@ checkbox, radio{
 .page__hd{
     padding: 20px;
 }
+.page__list{
+    padding: 10px 20px;
+}
 .page__whole{
     padding: 20px 0;
 }
@@ -249,4 +252,7 @@ checkbox, radio{
 }
 .section__ctn{
 
+}
+.page__bd__top{
+    margin-top:20px;
 }

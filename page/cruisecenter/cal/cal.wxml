@@ -1,0 +1,16 @@
+<view class="page">
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">请选择出发日期</view>
+            <picker mode="date" value="{{default_date}}" bindchange="bindDateChange">
+                <view class="picker">
+                    当前选择: {{date}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__list" wx:for-items="{{list}}">
+            <text class="page__header">{{item.cruiseName}}</text>
+            <text class="page__desc">{{item.txtLine}}</text>
+    </view>
+</view>

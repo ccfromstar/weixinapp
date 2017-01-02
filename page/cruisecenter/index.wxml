@@ -36,10 +36,12 @@
             </view>
             <view class="flex-item">
                 <view class="flex-wrp" style="flex-direction:column;">
-                    <view class="flex-itemzi">
-                        <image src="http://www.cruisesh.com/src/image/service_2.png" />
-					    <text>航班查询</text>
-                    </view>
+                        <navigator url="cal/cal" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_2.png" />
+                                <text>航班查询</text>
+                            </view>
+                        </navigator>
                         <navigator url="policy/policy" >
                             <view class="flex-itemzi">
                                 <image src="http://www.cruisesh.com/src/image/service_5.png" />
@@ -62,10 +64,12 @@
                                 <text>注意事项</text>
                             </view>
                         </navigator>
-                    <view class="flex-itemzi">
-                        <image src="http://www.cruisesh.com/src/image/service_6.png" />
-					    <text>邮轮产品</text>
-                    </view>
+                        <navigator url="product/product" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_6.png" />
+                                <text>邮轮产品</text>
+                            </view>
+                        </navigator>
                     <view class="flex-itemzi">
                         
                     </view>

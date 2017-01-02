@@ -72,7 +72,9 @@
       "page/cruisecenter/vip/vip",
       "page/cruisecenter/guide/guide",
       "page/cruisecenter/policy/policy",
-      "page/cruisecenter/note/note"
+      "page/cruisecenter/note/note",
+      "page/cruisecenter/cal/cal",
+      "page/cruisecenter/product/product"
   ],
   "window": {
     "navigationBarTextStyle": "#D9F3FF",
