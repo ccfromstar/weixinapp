@@ -2,12 +2,14 @@
     <view class="body">
         <view class="widgets">
             <view class="widgets__item" wx:for-items="{{items}}" >
-                <view id="view" class="widgets__info">
-                    <image class="page__img" mode="widthFix" src="{{item.img}}"  />
-                    <text class="pdj_title">{{item.title}}</text>
-                    <text class="pdj_productfeature">{{item.productfeature}}</text>
-                    <text class="pdj_price">￥{{item.price}}起/人</text>
-                </view>
+                <navigator url="productDetail?id={{item.id}}" >
+                    <view id="view" class="widgets__info">
+                        <image class="page__img" mode="widthFix" src="{{item.img}}"  />
+                        <text class="pdj_title">{{item.title}}</text>
+                        <text class="pdj_productfeature">{{item.productfeature}}</text>
+                        <text class="pdj_price">￥{{item.price}}起/人</text>
+                    </view>
+                </navigator>
             </view>
         </view>
     </view>

@@ -1,0 +1,110 @@
+<view class="page">
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+                <view id="view" class="widgets__info {{viewShow ? 'widgets__info_show_1' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">产品基本情况</text>
+                </view>
+                <view class="widgets__list {{viewShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <view class="section section_gap swiper">
+                            <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                                <block wx:for-items="{{pro.pro.images}}">
+                                    <swiper-item>
+                                        <image class="img_swiper" mode="widthFix" src="{{item.url}}" />
+                                    </swiper-item>
+                                </block>
+                            </swiper>
+                        </view>
+                        <text class="p_title">{{pro.pro.product.title}}</text>
+                        <text class="p_route">{{pro.pro.product.route}}</text>
+                        <text class="p_keyFeature">{{pro.pro.product.keyFeature}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="content" class="widgets__info {{contentShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">舱房价格</text>
+                </view>
+                <view class="widgets__list {{contentShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <block wx:for-items="{{pro.pro.cabins}}">
+                            <view>
+                                <image class="page__img" mode="widthFix" src="{{item.imageUrl}}" />
+                                <text class="c_title">{{item.cabinType}}</text>
+                                <text class="c_content">面积: {{item.size}}</text>
+                                <text class="c_content">甲板层: {{item.decks}}</text>
+                                <text class="c_content">舱房设施: {{item.facility}}</text>
+                                <text class="c_price">¥{{item.startingPrice}} /人起</text>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="form1" class="widgets__info {{form1Show ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text>签证说明</text>
+                </view>
+                <view class="widgets__list {{form1Show ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <text class="page__header">签证截止日期： {{pro.pro.product.visaApplicationUntil}}</text>
+                        <text class="page__desc">{{pro.pro.product.visaComment}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="form" class="widgets__info {{formShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">行程介绍</text>
+                </view>
+                <view class="widgets__list {{formShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <block wx:for-items="{{pro.pro.travelSchedule}}">
+                            <view>
+                                <image class="page__img" mode="widthFix" src="{{item.portImgs[0]}}" />
+                                <text class="c_content">第{{item.dayNumber}}天 {{item.location}}</text>
+                                <text class="c_content">到达：{{item.arrivalTime}} 出发：{{item.departureTime}}</text>
+                                <text class="c_content">{{item.description}}</text>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="interact" class="widgets__info {{interactShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">娱乐设施</text>
+                </view>
+                <view class="widgets__list {{interactShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <block wx:for-items="{{pro.pro.entertainment}}">
+                            <view>
+                                <image class="page__img" mode="widthFix" src="{{item.imgUrl}}" />
+                                <text class="c_content">{{item.name}}</text>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="interact1" class="widgets__info {{interact1Show ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">餐厅</text>
+                </view>
+                <view class="widgets__list {{interact1Show ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <block wx:for-items="{{pro.pro.culinary}}">
+                            <view>
+                                <image class="page__img" mode="widthFix" src="{{item.imgUrl}}" />
+                                <text class="c_content">{{item.name}}</text>
+                                <text class="c_content">{{item.type?item.type:''}}</text>
+                                <text class="c_content">{{item.fees?item.fees:''}}</text>
+                                <text class="c_content">{{item.reservation?item.reservation:''}}</text>
+                                <text class="c_content">{{item.openTime?item.openTime:''}}</text>
+                                <text class="c_content">{{item.clothing?item.clothing:''}}</text>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

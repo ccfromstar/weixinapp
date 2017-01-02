@@ -2,3 +2,22 @@
     padding:10px 16px;
     background-color: #FFFFFF;
 }
+.cal__header{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    flex-direction:row;
+    color:#D9F3FF;
+    background: #28528E;
+}
+.cal__desc{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    flex-direction:row;
+    background: #FFFFFF;
+}
+.cal__img{
+    width:30px;
+    height: 30px;
+}

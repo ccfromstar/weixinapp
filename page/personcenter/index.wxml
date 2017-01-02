@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-body-wrapper">
+      <view class="page-body-info">
+        <view class="page-body-title1">用户信息</view>
+        <block wx:if="{{hasUserInfo === false}}">
+          <text class="page-body-text">未登录</text>
+        </block>
+        <block wx:if="{{hasUserInfo === true}}">
+          <wx-image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></wx-image>
+          <view class="userinfo">
+            <text class="userinfo-nickname">昵称：{{userInfo.nickName}}</text>
+            <text class="userinfo-nickname">性别：{{userInfo.gender == 1?'男':'女' }}</text>
+            <text class="userinfo-nickname">省：{{userInfo.province }}</text>
+            <text class="userinfo-nickname">市：{{userInfo.city }}</text>
+            <text class="userinfo-nickname">国家：{{userInfo.country }}</text>
+          </view>
+        </block>
+      </view>
+      <block wx:if="{{hasUserInfo === false}}">
+        <view class="page-body-buttons">
+            <button class="page-body-button" type="primary" bindtap="getUserInfo">用微信登录</button>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

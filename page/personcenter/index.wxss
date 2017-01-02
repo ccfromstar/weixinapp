@@ -1,0 +1,44 @@
+.page-body-wrapper {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+.page-body-title1 {
+  font-size: 50rpx;
+  /*TODO 使用 rpx */
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+.page-body-text {
+  color: #bbb;
+  font-size: 28rpx;
+  /*TODO 使用 rpx */
+  line-height: 20px;
+  margin: 0 0 50rpx 0;
+  text-align: center;
+}
+.page-body-button {
+  width: 100%;
+  background-color: #1E2B5A !important;
+}
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+.userinfo-nickname {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+}
+.userinfo{
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+}
+
+

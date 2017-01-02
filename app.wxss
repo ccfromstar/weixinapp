@@ -106,7 +106,7 @@ page {
   width: 100%;
 }
 .page-body-button {
-  margin: 25rpx;
+
 }
 .page-body-button image {
   width: 150rpx;
@@ -255,4 +255,12 @@ checkbox, radio{
 }
 .page__bd__top{
     margin-top:20px;
+}
+.bar_header{
+    background-color: #28528E;
+    height: 40px;
+    width:100%;
+}
+.btn_return{
+    margin:5px 20px;
 }

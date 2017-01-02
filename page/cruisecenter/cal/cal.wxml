@@ -10,7 +10,12 @@
         </view>
     </view>
     <view class="page__list" wx:for-items="{{list}}">
-            <text class="page__header">{{item.cruiseName}}</text>
-            <text class="page__desc">{{item.txtLine}}</text>
+            <view class="cal__header">
+                <text>{{item.cruiseName}}</text>
+            </view>
+            <view class="cal__desc">
+                <image class="cal__img" mode="widthFix" src="../../../image/cruise3.png" />
+                <text>{{item.txtLine}}</text>
+            </view>
     </view>
 </view>

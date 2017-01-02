@@ -1,0 +1,42 @@
+<view class="page">
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">热点新闻</text>
+                    </view>
+                <view class="widgets__list {{viewShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <view class="widgets">
+                            <view class="widgets__item" wx:for-items="{{news}}" >
+                                    <view id="view" class="widgets__info">
+                                        <text class="pdj_title">{{item.title}}</text>
+                                        <text class="pdj_time">{{item.publishAt}}</text>
+                                        <text class="pdj_productfeature">{{item.summary}}</text>
+                                    </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="content" class="widgets__title {{contentShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">紧急公告</text>
+                </view>
+                <view class="widgets__list {{contentShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <view class="widgets">
+                            <view class="widgets__item" wx:for-items="{{notice}}" >
+                                    <view id="view" class="widgets__info">
+                                        <text class="pdj_title">{{item.title}}</text>
+                                        <text class="pdj_time">{{item.publishAt}}</text>
+                                        <text class="pdj_productfeature">{{item.post}}</text>
+                                    </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
