@@ -1,0 +1,44 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__desc">为提升邮轮游客的满意度，2016年上海市邮轮延误综合保险正式启动，公主的船舶于5月12日开始投保、歌诗达的船舶于6月1日开始投保、皇家的船舶于6月21日开始投保。累计至目前共承保近190个航次，游客人数约54万人次。</text>
+        <text class="page__desc">该险种由上海环亚保险经纪有限公司提供客户服务。8月开始，多个台风影响中国主要邮轮港口，现已有15个境内航次出现延误、港口取消或港口变更情况，保险赔偿预计超1000万。环亚是理赔服务的实际执行单位，将始终以游客利益为核心，为每位游客提供周到、贴心、专业的理赔指导，促进邮轮产业健康发展。</text>
+        <text class="page__desc">现开通4009205488服务热线及微信公众号“百姓保险网”（查询理赔进度）和“上海邮轮”下载理赔单证。</text>
+        <text class="page__desc"></text>
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/upload/22095-8ud3uw.jpg" />
+       
+
+        <text class="page__header">常见问题</text>
+        <text class="page__header">1.	问：团队多人出行，赔款接受人可以只提供一个人的名字吗？</text>
+        <text class="page__desc">答：不可以。这份保险是邮轮公司以每位游客的名字作为被保险人向保险公司投保，所以赔款接受人必须和被保险人相同。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">2.	问：团队多人出行，出险通知书可以只提供一份吗？</text>
+        <text class="page__desc">答：不可以。出险通知书必须每人填写一份，然后右下角“被保险人”处由本人签名</text>
+        <text class="page__desc"></text>
+        <text class="page__header">3.	问：小朋友没有银行卡，可以用父母的银行卡吗？</text>
+        <text class="page__desc">答：可以的。被保险人为未成年人，赔款接受人可以为其监护人，但需提供一份小朋友的出生证明复印件。若未成年人有本人的银行卡，则赔款接受人可以为其本人。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">4.	问：老年人没有银行卡，可以用其子女的银行卡吗？</text>
+        <text class="page__desc">答： 不可以。老年人作为单独的被保险人，只可以用其本人的银行卡或存折。若无银行卡，可去银行办理。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">5.	问：“开户名称”是填写被保险人名字还是银行名称？</text>
+        <text class="page__desc">答：银行名称，如“中国银行”、“中国工商银行”等。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">6.	问：开户银行一定需要填写支行吗？支行名称不能确认怎么办？</text>
+        <text class="page__desc">答：支行必须填写，保险赔偿金是根据您所提供的银行支行进账。若不清楚支行名称，您可拨打相应的银行客服电话进行确认。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">7.	问：小朋友的出生证明遗失了怎么办？</text>
+        <text class="page__desc">答：可以提供能证明赔款接受人和小朋友是监护人与被监护人关系的户口本复印件。例如，赔款接受人是小朋友父亲，户口本上户主也是小朋友父亲，则复印有父亲和小朋友信息的页面即可。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">8.	问：船卡、船票、银行卡必须是正反面复印吗？</text>
+        <text class="page__desc">答：不是，船卡或船票只需要有信息的那一面，银行卡只需有银行账号的那一面。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">9.	问：护照复印件需要复印哪些页面？</text>
+        <text class="page__desc">答：复印有您个人信息的页面即可。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">10.	问：船卡或船票原件被旅行社收回怎么办？</text>
+        <text class="page__desc">答：您可以找旅行社提供船卡或船票复印件。</text>
+        <text class="page__desc"></text>
+        <text class="page__header">11. 问：理赔材料中是否需要提供“邮轮航次变更通知书”？</text>
+        <text class="page__desc">答：不需要。邮轮公司已将变更通知书统一提交至保险公司。</text>
+    </view>
+</view>

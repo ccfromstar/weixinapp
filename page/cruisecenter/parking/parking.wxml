@@ -1,0 +1,22 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__header">公共停车场信息</text>
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/upload/6247-1q9yytz.gif" />
+        <text class="page__header">A）小客车停车场 - 150车位</text>
+        <text class="page__desc">专为邮轮港接客小客车所设，小客车进港接客需先至A区停车场办理进港通行证，凭证进港。</text>
+        <text class="page__desc">停车场地址：吴淞口路密山东路路口。</text>
+        <text class="page__desc">收费标准：0-15分钟免费，超过15分钟，5元人民币/小时。</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/10.pic_hd.jpg" />
+        <text class="page__header">B）过夜停车场 - 200车位</text>
+        <text class="page__desc">专为邮轮港游客车辆过夜停放所设，可以停放过夜小客车，大巴车。</text>
+        <text class="page__desc">停车场地址：吴淞口路宝杨路口（宝杨路过狮子桥左转即到）。</text>
+        <text class="page__header">收费标准：</text>
+        <text class="page__desc">小客车：5元人民币/小时，40元人民币/天；</text>
+        <text class="page__desc">大巴车：50元人民币/次（办理临时通行证20元人民币/次），80元人民币/天。</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/12.pic_hd.jpg" />
+        <text class="page__header">C）小客车过夜停车区 - 248车位</text>
+        <text class="page__header">D）备用停车区域（暂未启用）</text>
+        <text class="page__header">E）大巴停车区 - 30车位</text>
+        <text class="page__desc">停车场咨询热线：021-31273079</text>
+    </view>
+</view>

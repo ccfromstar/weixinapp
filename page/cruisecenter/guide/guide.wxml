@@ -8,4 +8,24 @@
         <text class="page__desc">港区为您提供免费饮水、咖啡简餐、便利店、外汇兑换、贵宾接待、失物招领、免税购物等。</text>
         <text class="page__desc">如服务过程中遇到任何问题，都可拨打港区热线 021-66593169，或就近向我们的客运人员寻求帮助。</text>
     </view>
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator url="../policy/policy" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">相关政策</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator url="../note/note" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">注意事项</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
+    </view>
 </view>

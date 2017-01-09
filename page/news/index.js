@@ -257,6 +257,10 @@ pageData.onLoad = function(options) {
         news:news,
         notice:notice
     })
+    //设置新闻默认打开状态
+    var id = 'view', data = {};
+    data[id + 'Show'] = !this.data[id + 'Show'];
+    this.setData(data);
 }
 
 Page(pageData);

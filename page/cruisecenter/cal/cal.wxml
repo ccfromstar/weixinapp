@@ -18,4 +18,8 @@
                 <text>{{item.txtLine}}</text>
             </view>
     </view>
+    <view class="page__hd">
+        <text class="page__header">当月航班</text>
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/src/image/2017-1.jpg" />
+    </view>
 </view>

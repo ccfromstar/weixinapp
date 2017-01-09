@@ -1,0 +1,36 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__header">上海吴淞口国际邮轮港口</text>
+        <text class="page__desc">地址：上海市宝山区宝杨路1号</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/W_EDIT_1426490125Y4WY.jpg" />
+        <text class="page__header">轨道交通线路</text>
+        <text class="page__header">前往港口</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/transport_metro_pic.jpg" />
+        <text class="page__header">公交车</text>
+        <text class="page__desc">附近公交（51路，952路，宝山9 路，160 路，508 路，728路，宝山2路），车费约2元。</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/transport_bus_pic.jpg" />
+        <text class="page__header">出租车</text>
+        <text class="page__desc">在宝杨路地铁站外，会有橙色的宝山区出租车排队等候，无需担心扬招不到出租车。可以让司机直接送至行李托运处（2号或3号）下车，如在引桥入口处下车，还需行走约400米才能到达。出租车程约15分钟，车费约15元。</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/transport_taxi_pic.jpg" />
+        <text class="page__header">离开港口</text>
+        <text class="page__header">短驳车</text>
+        <text class="page__desc">搭乘免费短驳车至地铁3号线宝杨路站：游客在下船入境领取行李后（有托运行李的游客），请根据现场指示牌前往短驳车上车点依次排队上车。短驳车上车点一般设在2号或3号大厅的出口处，车型为公交车或大巴车，人满即开，车程约15分钟。</text>
+        <text class="page__header">出租车</text>
+        <text class="page__desc">请根据码头现场的指示牌前往出租车候车点，和机场乘车的方法一致，依次排队上车即可，一般不会出现车辆断档的情况，出租车至地铁3号线宝杨路站车程约15分钟，价格约15元。</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/42-15061Q41Q0H5.jpg" />
+        <text class="page__header">建议出行路线</text>
+        <text class="page__header">人民广场出发：</text>
+        <text class="page__desc">自驾车路线（车程约50分钟）：沿武胜路直行进入威海路-沿威海路直行右转进入成都北路-沿成都北路直行往共和新路立交方向进入南北高架-沿南北高架进入宝杨路-沿宝杨路直行-到达吴淞口国际邮轮港。</text>
+        <text class="page__header">虹桥国际机场（虹桥高铁站）出发：</text>
+        <text class="page__desc">自驾车路线（车程约60分钟）：沿迎宾路-直行上延安高架-往共和新路立交方向转内环高架-往逸仙路高架方向-沿逸仙路高架直行-沿宝杨路下匝道下高架-沿宝杨路直行-到达吴淞口国际邮轮港。</text>
+        <text class="page__header">上海浦东国际机场出发：</text>
+        <text class="page__desc">自驾车路线（车程约90分钟）：浦东国际机场-上A20 外环高架-沿A20 五洲大道方向直行-转外环隧道直行-转逸仙路高架直行-沿宝杨路下匝道下高架-沿宝杨路直行-到达吴淞口国际邮轮港。</text>
+        <text class="page__desc">※具体路线可参考实时导航软件，以避免拥堵路段。</text>
+        <text class="page__header">私家车进港接客流程</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/transport_parking_pic2.gif" />
+        <text class="page__desc">1）游客下船取预约号</text>
+        <text class="page__desc">2）将预约号告知接车司机</text>
+        <text class="page__desc">3）司机预约号至A区停车场换取车辆临时进港通行证</text>
+        <text class="page__desc">4）私家车司机持通行证可进港接游客</text>
+    </view>
+</view>

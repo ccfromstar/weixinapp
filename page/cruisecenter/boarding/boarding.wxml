@@ -1,0 +1,34 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__header">登船流程</text>
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/upload/6247-163vmxu.gif" />
+        <text class="page__header">1）行李托运</text>
+        <text class="page__desc">大厅左右两侧的户外，不同的船位置不同</text>
+        <text class="page__header">2）办票</text>
+        <text class="page__desc">大厅内，请准备好护照等证件，办理信用卡关联</text>
+        <text class="page__header">3）安检</text>
+        <text class="page__desc">请提前将违禁物品丢弃到回收箱</text>
+        <text class="page__header">4）检验检疫</text>
+        <text class="page__desc">动植物等涉及检疫的</text>
+        <text class="page__header">5）海关</text>
+        <text class="page__desc">出入境检查，请提前准备好证件如护照等</text>
+        <text class="page__header">6）边检</text>
+        <text class="page__desc">边防检查</text>
+        <text class="page__header">7）登船</text>
+        <text class="page__desc">开始您的由来之旅</text>
+        <text class="page__desc">※请注意登船时间通常安排在下午开始，且在离港前1小时停止通关服务。</text>
+
+        <text class="page__header">下船流程</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/passenger_arrival_pic.gif" />
+        <text class="page__header">1）检验检疫</text>
+        <text class="page__desc">动植物等涉及检疫的</text>
+        <text class="page__header">2）边检</text>
+        <text class="page__desc">边防检查</text>
+        <text class="page__header">3）提取行李</text>
+        <text class="page__desc">请提前将违禁物品丢弃到回收箱</text>
+        <text class="page__header">4）检验检疫/海关</text>
+        <text class="page__desc">动植物等涉及检疫的</text>
+        <text class="page__header">5）离港</text>
+        <text class="page__desc">出入境检查，请提前准备好证件如护照等</text>
+    </view>
+</view>

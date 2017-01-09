@@ -2,7 +2,7 @@
     <view class="body">
         <view class="widgets">
             <view class="widgets__item">
-                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show_1' : ''}}" bindtap="widgetsToggle">
                     <text class="widgets__info-name">热点新闻</text>
                     </view>
                 <view class="widgets__list {{viewShow ? 'widgets__list_show' : ''}}">

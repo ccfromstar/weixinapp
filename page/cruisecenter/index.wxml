@@ -14,38 +14,32 @@
         <view class="flex-wrp" style="flex-direction:row;">
             <view class="flex-item">
                 <view class="flex-wrp" style="flex-direction:column;">
-                        <navigator url="query/query" >
+                        <navigator url="cal/cal" >
                             <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_1.png" />
-                                <text>船票查询</text>
+                                <image src="http://www.cruisesh.com/src/image/service_2.png" />
+                                <text>航班动态</text>
                             </view>
                         </navigator>
-                        <navigator url="guide/guide" >
+                        <navigator url="boarding/boarding" >
                             <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_4.png" />
-                                <text>港口指南</text>
+                                <image src="http://www.cruisesh.com/src/image/dlc.png" />
+                                <text>登船流程</text>
                             </view>
                         </navigator>
                         <navigator url="vip/vip" >
                             <view class="flex-itemzi">
                                 <image src="http://www.cruisesh.com/src/image/service_7.png" />
-                                <text>贵宾服务</text>
+                                <text>VIP服务</text>
                             </view>
                         </navigator>
                 </view>
             </view>
             <view class="flex-item">
                 <view class="flex-wrp" style="flex-direction:column;">
-                        <navigator url="cal/cal" >
+                        <navigator url="traffic/traffic" >
                             <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_2.png" />
-                                <text>航班查询</text>
-                            </view>
-                        </navigator>
-                        <navigator url="policy/policy" >
-                            <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_5.png" />
-                                <text>相关政策</text>
+                                <image src="http://www.cruisesh.com/src/image/gk.png" />
+                                <text>港口交通</text>
                             </view>
                         </navigator>
                         <navigator url="wifi/wifi" >
@@ -54,25 +48,35 @@
                                 <text>WIFI租赁</text>
                             </view>
                         </navigator>
-                </view>
-            </view>
-            <view class="flex-item">
-                <view class="flex-wrp" style="flex-direction:column;">
-                        <navigator url="note/note" >
-                            <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_3.png" />
-                                <text>注意事项</text>
-                            </view>
-                        </navigator>
                         <navigator url="product/product" >
                             <view class="flex-itemzi">
                                 <image src="http://www.cruisesh.com/src/image/service_6.png" />
                                 <text>邮轮产品</text>
                             </view>
                         </navigator>
-                    <view class="flex-itemzi">
-                        
-                    </view>
+                </view>
+            </view>
+            <view class="flex-item">
+                <view class="flex-wrp" style="flex-direction:column;">
+                        <navigator url="guide/guide" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_3.png" />
+                                <text>港口指南</text>
+                            </view>
+                        </navigator>
+                        <navigator url="insurance/insurance" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/bx.png" />
+                                <text>邮轮保险</text>
+                            </view>
+                        </navigator>
+                        <navigator url="parking/parking" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/tc.png" />
+                                <text>停车服务</text>
+                            </view>
+                        </navigator>
+                            <!--<contact-button type="default-dark" size="40" session-from="weapp"> 联系客服</contact-button>-->
                 </view>
             </view>
         </view>

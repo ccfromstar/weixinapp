@@ -1222,7 +1222,7 @@ Page({
     that.setData({
         list:data
     })
-    /*
+    
     wx.request({
         url: 'https://service.huiyoulun.com/service/getCalByKey', 
         method: 'POST',
@@ -1241,7 +1241,7 @@ Page({
         fail: function(err) {
             console.log(err)
         }
-    })*/
+    })
   },
   bindDateChange:function(e){
     this.setData({
