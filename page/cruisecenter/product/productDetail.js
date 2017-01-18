@@ -1,4 +1,4 @@
-var res = [{
+/*var res = [{
   "product": {
     "id": 1934,
     "ship_id": 41,
@@ -3708,22 +3708,32 @@ pageData.onLoad = function(options) {
     console.log(options)
     var id = options.id
     var that = this
-    //根据产品id获取产品
-    var data
-    for(var i in res){
-        if(res[i].product.id == id){
-            data = {
-                pro:res[i]
-            };
+  
+    wx.request({
+        url: 'https://service.huiyoulun.com/service/getProductById', 
+        method: 'POST',
+        data: {
+           id:id
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            console.log(res.data)
+            var data = res.data;
+           
+            //签证说明中<br/>换成\n
+            var o = data.product.visaComment;
+            data.product.visaComment = o.replace(/<br\/>/g,'\n\n');
+            that.setData({
+                pro:data
+            })
+        },
+        fail: function(err) {
+            console.log(err)
         }
-    }
-    console.log(data)
-    //签证说明中<br/>换成\n
-    var o = data.pro.product.visaComment;
-    data.pro.product.visaComment = o.replace(/<br\/>/g,'\n\n');
-    that.setData({
-        pro:data
     })
+
     //设置产品基本情况默认打开状态
     var id = 'view', data = {};
     data[id + 'Show'] = !this.data[id + 'Show'];

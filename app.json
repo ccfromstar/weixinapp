@@ -4,6 +4,8 @@
       "page/shopping/index",
       "page/personcenter/index",
       "page/news/index",
+      "page/news/detail",
+      "page/notice/index",
       "page/cruisecenter/wifi/wifi",
       "page/cruisecenter/query/query",
       "page/cruisecenter/vip/vip",
@@ -38,12 +40,12 @@
       "pagePath": "page/news/index",
       "iconPath": "image/list_gray@3x.png",
       "selectedIconPath": "image/list_blue@3x.png",
-      "text": "行业资讯"
+      "text": "热点新闻"
     },{
-      "pagePath": "page/personcenter/index",
-      "iconPath": "image/people_gray@3x.png",
-      "selectedIconPath": "image/people_blue@3x.png",
-      "text": "个人中心"
+      "pagePath": "page/notice/index",
+      "iconPath": "image/list_gray@3x.png",
+      "selectedIconPath": "image/list_blue@3x.png",
+      "text": "紧急公告"
     }]
   },
   "networkTimeout": {

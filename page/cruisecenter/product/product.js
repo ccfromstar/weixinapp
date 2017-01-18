@@ -1,4 +1,5 @@
 var pageData = {}
+/*
 var res = [
   {
     "id": 1934,
@@ -61,7 +62,49 @@ var res = [
     "img":"http://7xs3pn.com1.z0.glb.clouddn.com/o_1aqe2p3bsk1k1t19v0sfpj10jsc.jpg"
   }
 ];
+
 pageData.data = {
     items:res
 } 
 Page(pageData)
+*/
+Page({
+  data: {
+    
+  },
+  onLoad: function () {
+    var that = this
+    wx.request({
+        url: 'https://service.huiyoulun.com/service/getProduct', 
+        method: 'POST',
+        data: {
+           
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            //console.log(res.data)
+            var d = res.data;
+            for(var i in d){
+              var t = d[i].title;
+              if(t.indexOf("量子") != -1){
+                  d[i].img = "http://7xs3pn.com1.z0.glb.clouddn.com/o_1aqe2p3bsk1k1t19v0sfpj10jsc.jpg";
+              }else if(t.indexOf("蓝宝石") != -1){
+                  d[i].img = "http://7xs3pn.com1.z0.glb.clouddn.com/o_1aqdljvac102k1sarn7411ovov5e.jpg";
+              }else if(t.indexOf("新世纪") != -1){
+                  d[i].img = "http://7xs3pn.com1.z0.glb.clouddn.com/o_1b19597k713171vm2187o1fbs1v5ec.png";
+              }else if(t.indexOf("大西洋") != -1){
+                  d[i].img = "http://7xs3pn.com1.z0.glb.clouddn.com/o_1aqdnjfk91ve12s21adv1an4qeqc.jpg";
+              }
+            }
+            that.setData({
+                items:d
+            })
+        },
+        fail: function(err) {
+            console.log(err)
+        }
+    })
+  }
+})

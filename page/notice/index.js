@@ -251,7 +251,7 @@ pageData.onLoad = function(options) {
       duration: 2000
     })
     wx.request({
-        url: 'https://service.huiyoulun.com/service/getNews', 
+        url: 'https://service.huiyoulun.com/service/getNotice', 
         method: 'POST',
         data: {
            
@@ -260,15 +260,15 @@ pageData.onLoad = function(options) {
             'content-type': 'application/json'
         },
         success: function(res) {
-            var news = res.data;
+            var notice = res.data;
             /*日期格式化*/
-            for(var i in news){
-                var o = news[i].publishAt;
-                news[i].publishAt = o.substring(0,10);
+            for(var i in notice){
+                var o = notice[i].publishAt;
+                notice[i].publishAt = o.substring(0,10);
             }
-            console.log(news);
+            console.log(notice);
             that.setData({
-                news:news
+                notice:notice
             })
             wx.hideToast()
         },

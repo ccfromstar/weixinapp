@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="widgets__item" wx:for-items="{{notice}}" >
+        <view id="view" class="widgets__info">
+            <text class="pdj_title">{{item.title}}</text>
+            <text class="pdj_time">{{item.publishAt}}</text>
+            <text class="pdj_productfeature">{{item.post}}</text>
+        </view>
+    </view>
+</view>

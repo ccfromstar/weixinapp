@@ -10,16 +10,17 @@
                         <view class="section section_gap swiper">
                             <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
                                     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                                <block wx:for-items="{{pro.pro.images}}">
+                                <block wx:for-items="{{pro.images}}">
                                     <swiper-item>
                                         <image class="img_swiper" mode="widthFix" src="{{item.url}}" />
                                     </swiper-item>
                                 </block>
                             </swiper>
                         </view>
-                        <text class="p_title">{{pro.pro.product.title}}</text>
-                        <text class="p_route">{{pro.pro.product.route}}</text>
-                        <text class="p_keyFeature">{{pro.pro.product.keyFeature}}</text>
+                        <text class="p_title">{{pro.product.title}}</text>
+                        <text class="p_route">{{pro.product.route}}</text>
+                        <text class="p_keyFeature">{{pro.product.keyFeature}}</text>
+                        <text class="p_phone">售票电话：021-56170116</text>
                     </view>
                 </view>
             </view>
@@ -29,7 +30,7 @@
                 </view>
                 <view class="widgets__list {{contentShow ? 'widgets__list_show' : ''}}">
                     <view class="page__widgets">
-                        <block wx:for-items="{{pro.pro.cabins}}">
+                        <block wx:for-items="{{pro.cabins}}">
                             <view>
                                 <image class="page__img" mode="widthFix" src="{{item.imageUrl}}" />
                                 <text class="c_title">{{item.cabinType}}</text>
@@ -48,8 +49,8 @@
                 </view>
                 <view class="widgets__list {{form1Show ? 'widgets__list_show' : ''}}">
                     <view class="page__widgets">
-                        <text class="page__header">签证截止日期： {{pro.pro.product.visaApplicationUntil}}</text>
-                        <text class="page__desc">{{pro.pro.product.visaComment}}</text>
+                        <text class="page__header">签证截止日期： {{pro.product.visaApplicationUntil}}</text>
+                        <text class="page__desc">{{pro.product.visaComment}}</text>
                     </view>
                 </view>
             </view>
@@ -59,7 +60,7 @@
                 </view>
                 <view class="widgets__list {{formShow ? 'widgets__list_show' : ''}}">
                     <view class="page__widgets">
-                        <block wx:for-items="{{pro.pro.travelSchedule}}">
+                        <block wx:for-items="{{pro.travelSchedule}}">
                             <view>
                                 <image class="page__img" mode="widthFix" src="{{item.portImgs[0]}}" />
                                 <text class="c_content">第{{item.dayNumber}}天 {{item.location}}</text>
@@ -76,7 +77,7 @@
                 </view>
                 <view class="widgets__list {{interactShow ? 'widgets__list_show' : ''}}">
                     <view class="page__widgets">
-                        <block wx:for-items="{{pro.pro.entertainment}}">
+                        <block wx:for-items="{{pro.entertainment}}">
                             <view>
                                 <image class="page__img" mode="widthFix" src="{{item.imgUrl}}" />
                                 <text class="c_content">{{item.name}}</text>
@@ -91,7 +92,7 @@
                 </view>
                 <view class="widgets__list {{interact1Show ? 'widgets__list_show' : ''}}">
                     <view class="page__widgets">
-                        <block wx:for-items="{{pro.pro.culinary}}">
+                        <block wx:for-items="{{pro.culinary}}">
                             <view>
                                 <image class="page__img" mode="widthFix" src="{{item.imgUrl}}" />
                                 <text class="c_content">{{item.name}}</text>

@@ -3,7 +3,7 @@ var y = myDate.getFullYear();
 var m = (((myDate.getMonth()+1)+"").length==1)?"0"+(myDate.getMonth()+1):(myDate.getMonth()+1);
 var d = (((myDate.getDate())+"").length==1)?"0"+(myDate.getDate()):(myDate.getDate());
 var _today = y +"-"+ m +"-"+ d;
-
+/*
 var res = [
   {
     "id": 2,
@@ -1199,7 +1199,7 @@ var res = [
     "cruiseName": "海洋量子号",
     "txtLine": "上海-长崎-上海"
   }
-];
+];*/
 
 Page({
   data: {
@@ -1210,6 +1210,7 @@ Page({
     var that = this
     /*获取航线*/
     var data = []
+    /*
     for(var i in res){
         if(res[i].datestart == _today){
             data.push({
@@ -1221,7 +1222,7 @@ Page({
     }
     that.setData({
         list:data
-    })
+    })*/
     
     wx.request({
         url: 'https://service.huiyoulun.com/service/getCalByKey', 
@@ -1250,6 +1251,7 @@ Page({
     var that = this
     /*获取航线*/
     var data = []
+    /*
     for(var i in res){
         if(res[i].datestart == e.detail.value){
             data.push({
@@ -1261,8 +1263,8 @@ Page({
     }
     that.setData({
         list:data
-    })
-    /*
+    })*/
+    
     wx.request({
         url: 'https://service.huiyoulun.com/service/getCalByKey', 
         method: 'POST',
@@ -1278,6 +1280,6 @@ Page({
                 list:res.data
             })
         }
-    })*/
+    })
   }
 })

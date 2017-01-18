@@ -1,0 +1,22 @@
+<import src="../wxParse/wxParse.wxml"/>
+<view class="page">
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+                <view class="widgets__list {{viewShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets1">
+                        <view class="widgets">
+                            <view class="widgets__item"  >
+                                    <view id="view" class="widgets__info">
+                                        <text class="pdj_title">{{news[0].title}}</text>
+                                        <text class="pdj_time">{{news[0].publishAt}}</text>
+                                        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                                    </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
