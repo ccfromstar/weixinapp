@@ -1,3 +1,4 @@
+/* page/pay/result.wxss */
 .index{
     background-color: #FBF9FE;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
@@ -9,8 +10,9 @@
     padding: 40px;
 }
 .body{
+    padding-left: 15px;
+    padding-right: 15px;
     overflow: hidden;
-    background-color:#fff;
 }
 .title{
     font-size: 30px;
@@ -29,22 +31,13 @@
     border-radius: 2px;
     cursor: pointer;
 }
-.widgets__title{
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    flex-direction:row;
-    background: #1E2C5B;
-    color:#E6F4FE;
-    font-weight: bold;
-    font-size:14px;
-}
 .widgets__info{
     display: flex;
     padding: 10px;
-    align-items: left;
+    align-items: center;
     flex-direction:column;
-
+    color:#D9F3FF;
+    background: #28528E;
 }
 .widgets__info_show{
     opacity: .4;
@@ -108,18 +101,89 @@
 .pdj_title{
     font-size:16px;
     font-weight: bold;
-    line-height: 1.5;
 }
 .pdj_productfeature{
-    
+    margin:5px 0;
+    font-size:12px;
+    color:#888888;
 }
 .pdj_price{
     font-size:18px;
     font-weight: bold;
     color:#ff6600;
 }
-.pdj_time{
-    font-size: 12px;
+.swiper-item{
+    display: block;
+    height: auto;
+}
+.section_gap {
+    padding:0 !important;
+}
+.img_swiper{
+    display: inline !important;
+}
+.flex-wrp{
+    display:flex;
+    background-color: #FFFFFF;
+}
+.flex-item{
+    width: 250rpx;
+}
+.flex-itemzi{
+    box-sizing:border-box;
+    width: 100%;
+    text-align: center;
+    border:1px solid #F3F3F3;
+    padding:50rpx 0;
+    height:250rpx;
+}
+image{
+    width:100rpx;
+    height:100rpx;
+}
+text{
+    display: block;
+}
+swiper{
+    
+}
+.p_title{
+    margin:10px 0 5px 0;
+    font-weight: bold;
+}
+.p_route{
     margin:5px 0;
+    font-size: 12px;
     color:#28528E;
+}
+.p_info{
+    margin:40px 0 5px 0;
+    font-size: 12px;
+    color:#AAAAAA;
+}
+.p_keyFeature{
+    margin:5px 0;
+    font-size: 12px;
+    color:#888888;
+}
+.p_phone{
+    margin:20px 0 0 0;
+    font-size: 16px;
+    color:#ff6600;
+    font-weight: bold;
+}
+.c_title{
+    margin:5px 0;
+    font-weight: bold;
+}
+.c_content{
+    margin:5px 0;
+    font-size: 12px;
+    color:#888888;
+}
+.c_price{
+    margin:5px 0;
+    font-size: 14px;
+    color:#ff6600;
+    font-weight: bold;
 }

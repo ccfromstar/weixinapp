@@ -109,3 +109,6 @@
     font-weight: bold;
     color:#ff6600;
 }
+.page__img{
+    height: 174px !important;
+}

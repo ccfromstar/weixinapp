@@ -234,6 +234,8 @@ var notice = [
 ];
 */
 
+var page = 1;
+
 pageData.widgetsToggle = function (e) {
     var id = e.currentTarget.id, data = {};
     for (var i = 0, len = type.length; i < len; ++i) {
@@ -251,10 +253,10 @@ pageData.onLoad = function(options) {
       duration: 2000
     })
     wx.request({
-        url: 'https://service.huiyoulun.com/service/getNews', 
+        url: 'https://service.huiyoulun.com/service/getNewsByPage', 
         method: 'POST',
         data: {
-           
+           page:page
         },
         header: {
             'content-type': 'application/json'
@@ -280,6 +282,84 @@ pageData.onLoad = function(options) {
     var id = 'view', data = {};
     data[id + 'Show'] = !this.data[id + 'Show'];
     this.setData(data);
+}
+
+
+pageData.onPullDownRefresh = function(){
+    var that = this
+    if(page == 1){
+      wx.stopPullDownRefresh()
+      return false
+    }
+    page--
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 2000
+    })
+    wx.request({
+        url: 'https://service.huiyoulun.com/service/getNewsByPage', 
+        method: 'POST',
+        data: {
+           page:page
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            var news = res.data;
+            for(var i in news){
+                var o = news[i].publishAt;
+                news[i].publishAt = o.substring(0,10);
+            }
+            console.log(news);
+            that.setData({
+                news:news
+            })
+            wx.hideToast()
+            wx.stopPullDownRefresh()
+        },
+        fail: function(err) {
+            console.log(err)
+        }
+    })
+    
+}
+
+pageData.onReachBottom = function(){
+    //console.log('circle 下一页');
+    var that = this
+    wx.showToast({
+      title: '数据加载中',
+      icon: 'loading',
+      duration: 2000
+    })
+    page++
+    wx.request({
+        url: 'https://service.huiyoulun.com/service/getNewsByPage', 
+        method: 'POST',
+        data: {
+           page:page
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            var news = res.data;
+            for(var i in news){
+                var o = news[i].publishAt;
+                news[i].publishAt = o.substring(0,10);
+            }
+            console.log(news);
+            that.setData({
+                news:news
+            })
+            wx.hideToast()
+        },
+        fail: function(err) {
+            console.log(err)
+        }
+    })
 }
 
 Page(pageData);

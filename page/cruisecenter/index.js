@@ -1,6 +1,6 @@
 var pageData = {}
 pageData.data = {
-        img: ['1', '0', '02', '01', '2', '3'],
+        img: ['1', '2', '3', '4'],
         indicatorDots: true,
         vertical: false,
         autoplay: true,

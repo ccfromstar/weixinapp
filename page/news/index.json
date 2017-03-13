@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "热点新闻"
+  "navigationBarTitleText": "行业资讯",
+  "enablePullDownRefresh": true
 }

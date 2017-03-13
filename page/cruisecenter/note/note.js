@@ -51,6 +51,8 @@ Page({
         success: function(res) {
             console.log(res.data)
             var article = res.data[0].post;
+            article = article.replace(/src="\/upload/g,'src="http://www.cruisesh.com/upload');
+            console.log(article)
             WxParse.wxParse('article', 'html', article, that,5);
             wx.hideToast()
         },

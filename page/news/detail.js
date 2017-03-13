@@ -38,6 +38,7 @@ pageData.onLoad = function(options) {
                 news[i].publishAt = o.substring(0,10);
             }
             var article = news[0].post;
+            article = article.replace(/src="\/upload/g,'src="http://www.cruisesh.com/upload');
             WxParse.wxParse('article', 'html', article, that,5);
             that.setData({
                 news:news

@@ -1,0 +1,46 @@
+<!--page/pay/index.wxml-->
+<view class="page">
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">请填写手机号</view>
+            <input bindinput="bindKeyInput"  auto-focus/>
+        </view>
+    </view>
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">请选择出发日期</view>
+            <picker mode="date" value="{{default_date}}" bindchange="bindDateChange">
+                <view class="picker">
+                    当前选择: {{date}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">请选择您的行程</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                    当前选择：{{array[index]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <button class="btn_primary" type="primary" bindtap="weixinpay"> 确认支付 </button>
+</view>
+
+<!--按钮-->  
+<view style="{{isShowToast?'position:fixed;':''}}">  
+  <view class="btn" bindtap="clickBtn">button</view>  
+</view>  
+  
+<!--mask-->  
+<view class="toast_mask" wx:if="{{isShowToast}}"></view>  
+<!--以下为toast显示的内容-->  
+<view class="toast_content_box" wx:if="{{isShowToast}}">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+      {{toastText}}  
+    </view>  
+  </view>  
+</view>  

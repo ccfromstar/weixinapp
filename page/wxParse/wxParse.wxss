@@ -24,6 +24,7 @@ view{
     display: inline;
     margin: 0;
     padding: 0;
+    line-height: 2;
 }
 /*//标题 */
 .wxParse-div{margin: 0;padding: 0;}
@@ -94,10 +95,10 @@ view{
 }
 
 .wxParse-img{
-    background-color: #efefef;
     overflow: hidden;
     width:40px;
     height: 40px;
+    max-width: 100%;
 }
 
 .wxParse-blockquote {
@@ -199,5 +200,9 @@ view{
 .wxParse-th{
 	background:#f0f0f0;
 	border-top:1px solid #e0e0e0;
+}
+.wxParse-p{
+    text-indent: 25px;
+    margin-bottom:10px;
 }
 

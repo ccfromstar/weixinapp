@@ -1,0 +1,21 @@
+<!--page/pay/result.wxml-->
+<view class="page">
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+                <view id="view" class="widgets__info {{viewShow ? 'widgets__info_show_1' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">电子车票</text>
+                </view>
+                <view class="widgets__list {{viewShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <text class="p_route">出发日期</text>
+                        <text class="p_title">{{data}}</text>
+                        <text class="p_route">车票类型</text>
+                        <text class="p_title">{{path}}</text>
+                        <text class="p_info">请至发车点出示电子车票上车</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

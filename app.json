@@ -1,5 +1,7 @@
 {
   "pages": [
+      "page/pay/index",
+      "page/pay/result",
       "page/cruisecenter/index",
       "page/shopping/index",
       "page/personcenter/index",
@@ -22,7 +24,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "#D9F3FF",
-    "navigationBarTitleText": "上海国际邮轮旅游服务中心",
+    "navigationBarTitleText": "上海邮轮中心小助手",
     "navigationBarBackgroundColor": "#1E2C5B",
     "backgroundColor": "#fbf9fe"
   },
@@ -40,12 +42,17 @@
       "pagePath": "page/news/index",
       "iconPath": "image/list_gray@3x.png",
       "selectedIconPath": "image/list_blue@3x.png",
-      "text": "热点新闻"
+      "text": "行业资讯"
     },{
       "pagePath": "page/notice/index",
       "iconPath": "image/list_gray@3x.png",
       "selectedIconPath": "image/list_blue@3x.png",
       "text": "紧急公告"
+    },{
+      "pagePath": "page/pay/index",
+      "iconPath": "image/list_gray@3x.png",
+      "selectedIconPath": "image/list_blue@3x.png",
+      "text": "港铁直通车"
     }]
   },
   "networkTimeout": {
