@@ -2,37 +2,44 @@
 <view class="page">
     <view class="page__bd__top">
        <view class="section">
-            <view class="section__title">请填写手机号</view>
-            <input bindinput="bindKeyInput"  auto-focus/>
+            <view class="section__title">姓名</view>
+            <input bindinput="bindKeyInputName"  auto-focus/>
         </view>
     </view>
     <view class="page__bd__top">
        <view class="section">
-            <view class="section__title">请选择出发日期</view>
-            <picker mode="date" value="{{default_date}}" bindchange="bindDateChange">
+            <view class="section__title">联系人手机号</view>
+            <input type="number" bindinput="bindKeyInput"  auto-focus/>
+        </view>
+    </view>
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">人数</view>
+            <input type="number" bindinput="bindKeyInputNum"  auto-focus/>
+        </view>
+    </view>
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">邮轮航次</view>
+            <picker bindchange="bindPickerChangeYL" value="{{indexYL}}" range="{{arrayYL}}">
                 <view class="picker">
-                    当前选择: {{date}}
+                    {{arrayYL[indexYL]}}
                 </view>
             </picker>
         </view>
     </view>
     <view class="page__bd__top">
         <view class="section">
-            <view class="section__title">请选择您的行程</view>
+            <view class="section__title">交通产品选择</view>
             <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
                 <view class="picker">
-                    当前选择：{{array[index]}}
+                    {{array[index]}}
                 </view>
             </picker>
         </view>
     </view>
     <button class="btn_primary" type="primary" bindtap="weixinpay"> 确认支付 </button>
-</view>
-
-<!--按钮-->  
-<view style="{{isShowToast?'position:fixed;':''}}">  
-  <view class="btn" bindtap="clickBtn">button</view>  
-</view>  
+</view> 
   
 <!--mask-->  
 <view class="toast_mask" wx:if="{{isShowToast}}"></view>  

@@ -6,20 +6,73 @@ var d = (((myDate.getDate())+"").length==1)?"0"+(myDate.getDate()):(myDate.getDa
 var _today = y +"-"+ m +"-"+ d;
 
 var _data = _today;
-var _path = '虹桥枢纽到邮轮港(¥35)';
 
 var mobile = '';
+var name = '';
+var num = 0;
+var arrP = [];
+var arrL = [];
+var arrProduct = [];
+var unitprice = 35;
+var line = '';
+var product = '';
 
 Page({
    data: {
-    array:["虹桥枢纽到邮轮港(¥35)","邮轮港到虹桥枢纽(¥35)","往返程(¥60)"],
     index:0,
+    indexYL:0,
     date:_today,
     default_date:_today,
     isShowToast: false
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
+    var arr1 = []
+    var arr2 = []
+    var that = this
+    wx.request({
+        url: 'https://service.huiyoulun.com/service/getCal', 
+        method: 'POST',
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            var d = res.data
+            for(var i in d){
+              arr1.push(d[i].datestart+" "+d[i].cruiseName)
+              arrL.push(d[i].datestart+" "+d[i].cruiseName)
+            }           
+            line = arrL[0]
+            that.setData({  
+              arrayYL:arr1
+            })
+            wx.request({
+                url: 'https://service.huiyoulun.com/service/getTT', 
+                method: 'POST',
+                header: {
+                    'content-type': 'application/json'
+                },
+                success: function(res) {
+                    var d = res.data
+                    for(var i in d){
+                      arr2.push(d[i].name+" ¥"+d[i].price+" (原价¥"+d[i].original_price+")")
+                      arrProduct.push(d[i].name+" ¥"+d[i].price+" (原价¥"+d[i].original_price+")")
+                      arrP.push(d[i].price);
+                    }     
+                    product = arrProduct[0]      
+                    that.setData({  
+                      array:arr2
+                    })
+                },
+                fail: function(err) {
+                    console.log(err)
+                }
+            })
+        },
+        fail: function(err) {
+            console.log(err)
+        }
+    })
   },
   onReady:function(){
     // 页面渲染完成
@@ -34,26 +87,51 @@ Page({
     // 页面关闭
   },
   weixinpay:function(){
-    if(mobile == ""){
-     this.setData({  
-      count: 1500,  
-      toastText: '请填写手机号',  
-      isShowToast: true
-     });  
-     this.showToast();  
-     return false
+    if(name == ""){
+      this.setData({  
+        count: 1500,  
+        toastText: '请填写姓名',  
+        isShowToast: true
+      });  
+      this.showToast();  
+      return false
+    }else if(mobile == ""){
+      this.setData({  
+        count: 1500,  
+        toastText: '请填写手机号',  
+        isShowToast: true
+      });  
+      this.showToast();  
+      return false
+    }else if(num == "" || num == "0"){
+      this.setData({  
+        count: 1500,  
+        toastText: '请填写大于0的人数',  
+        isShowToast: true
+      });  
+      this.showToast();  
+      return false
     }
     WeixinPay()
   },
   bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    var array = ["虹桥枢纽到邮轮港(¥35)","邮轮港到虹桥枢纽(¥35)","往返程(¥60)"];
+    //console.log('picker发送选择改变，携带值为', e.detail.value)
     var i = e.detail.value
     var that = this
     that.setData({
         index:i
     })
-    _path = array[i]
+    unitprice = arrP[i]
+    product = arrProduct[i]
+  },
+  bindPickerChangeYL: function(e) {
+    //console.log('picker发送选择改变，携带值为', e.detail.value)
+    var i = e.detail.value
+    var that = this
+    that.setData({
+        indexYL:i
+    })
+    line = arrL[i]
   },
   bindDateChange:function(e){
     _data = e.detail.value
@@ -63,6 +141,12 @@ Page({
   },
   bindKeyInput: function(e) {
    mobile = e.detail.value
+  },
+  bindKeyInputName: function(e) {
+   name = e.detail.value
+  },
+  bindKeyInputNum: function(e) {
+   num = e.detail.value
   },
   showToast: function () {  
     var _this = this;  
@@ -100,13 +184,16 @@ function WeixinPay(){
             },
             success: function(res) {
                 console.log(res);
+                //console.log(unitprice);
+                //console.log(num);
                 var openid = res.data.openid;
                 wx.request({
                     url: 'https://service.huiyoulun.com/service/getPay', 
                     method: 'POST',
                     data: {
                       bookingNo:_today + Rnd(100,999),
-                      total_fee:1,
+                      total_fee:num,
+                      //total_fee:unitprice*num*100,
                       openid:openid
                     },
                     header: {
@@ -122,7 +209,30 @@ function WeixinPay(){
                           'paySign': res.data._paySignjs,
                           'success':function(res){
                               console.log(res);
-                              /*存储车票信息*/
+                              //生成购票记录
+                              wx.request({
+                                  url: 'https://service.huiyoulun.com/service/insertTTBooking', 
+                                  method: 'POST',
+                                  data: {
+                                    name:name,
+                                    mobile:mobile,
+                                    num:num,
+                                    line:line,
+                                    product:product,
+                                    price:unitprice*num
+                                  },
+                                  header: {
+                                      'content-type': 'application/json'
+                                  },
+                                  success: function(res) {
+                                      
+                                  },
+                                  fail: function(err) {
+                                      console.log(err)
+                                  }
+                              })
+                              /*
+                              //存储车票信息
                               wx.setStorage({
                                 key:"data",
                                 data:_data
@@ -133,7 +243,7 @@ function WeixinPay(){
                               })
                               wx.navigateTo({
                                 url: 'result'
-                              })
+                              })*/
                           },
                           'fail':function(res){
                               console.log('fail:'+JSON.stringify(res));

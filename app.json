@@ -1,8 +1,8 @@
 {
   "pages": [
+      "page/cruisecenter/index",
       "page/pay/index",
       "page/pay/result",
-      "page/cruisecenter/index",
       "page/shopping/index",
       "page/personcenter/index",
       "page/news/index",
@@ -52,7 +52,7 @@
       "pagePath": "page/pay/index",
       "iconPath": "image/list_gray@3x.png",
       "selectedIconPath": "image/list_blue@3x.png",
-      "text": "港铁直通车"
+      "text": "高铁邮轮直通车"
     }]
   },
   "networkTimeout": {
