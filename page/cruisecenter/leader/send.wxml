@@ -1,0 +1,25 @@
+<!--page/cruisecenter/leader/send.wxml-->
+<view class="page">
+    <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">邮轮团选择</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                    {{array[index]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <button class="page-body-button" type="primary" bindtap="send"> 申请带团 </button>
+</view> 
+
+<!--mask-->  
+<view class="toast_mask" wx:if="{{isShowToast}}"></view>  
+<!--以下为toast显示的内容-->  
+<view class="toast_content_box" wx:if="{{isShowToast}}">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+      {{toastText}}  
+    </view>  
+  </view>  
+</view>

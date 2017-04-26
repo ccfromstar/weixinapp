@@ -1,14 +1,19 @@
 {
   "pages": [
       "page/cruisecenter/index",
-      "page/pay/index",
-      "page/pay/result",
+      "page/cruisecenter/pay/index",
+      "page/cruisecenter/clause/clause",
+      "page/cruisecenter/pay/result",
       "page/shopping/index",
       "page/personcenter/index",
       "page/news/index",
       "page/news/detail",
       "page/notice/index",
       "page/cruisecenter/wifi/wifi",
+      "page/cruisecenter/leader/leader",
+      "page/cruisecenter/leader/index",
+      "page/cruisecenter/leader/breakfast",
+      "page/cruisecenter/leader/send",
       "page/cruisecenter/query/query",
       "page/cruisecenter/vip/vip",
       "page/cruisecenter/guide/guide",
@@ -35,24 +40,24 @@
     "backgroundColor": "#ffffff",
     "list": [{
       "pagePath": "page/cruisecenter/index",
-      "iconPath": "image/home_gray@3x.png",
-      "selectedIconPath": "image/home_blue@3x.png",
+      "iconPath": "image/bottom_icon_gray_1.png",
+      "selectedIconPath": "image/bottom_icon_blue_1.png",
       "text": "首页"
     },{
       "pagePath": "page/news/index",
-      "iconPath": "image/list_gray@3x.png",
-      "selectedIconPath": "image/list_blue@3x.png",
+      "iconPath": "image/bottom_icon_gray_2.png",
+      "selectedIconPath": "image/bottom_icon_blue_2.png",
       "text": "行业资讯"
     },{
       "pagePath": "page/notice/index",
-      "iconPath": "image/list_gray@3x.png",
-      "selectedIconPath": "image/list_blue@3x.png",
+      "iconPath": "image/bottom_icon_gray_3.png",
+      "selectedIconPath": "image/bottom_icon_blue_3.png",
       "text": "紧急公告"
     },{
-      "pagePath": "page/pay/index",
-      "iconPath": "image/list_gray@3x.png",
-      "selectedIconPath": "image/list_blue@3x.png",
-      "text": "高铁邮轮直通车"
+      "pagePath": "page/cruisecenter/product/product",
+      "iconPath": "image/bottom_icon_gray_4.png",
+      "selectedIconPath": "image/bottom_icon_blue_4.png",
+      "text": "邮轮产品"
     }]
   },
   "networkTimeout": {

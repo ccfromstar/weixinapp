@@ -1,9 +1,11 @@
 // page/pay/index.js
 var myDate = new Date(); //日期对象
+myDate.setDate(myDate.getDate()+2);
 var y = myDate.getFullYear(); 
 var m = (((myDate.getMonth()+1)+"").length==1)?"0"+(myDate.getMonth()+1):(myDate.getMonth()+1);
 var d = (((myDate.getDate())+"").length==1)?"0"+(myDate.getDate()):(myDate.getDate());
 var _today = y +"-"+ m +"-"+ d;
+
 
 var _data = _today;
 
@@ -16,6 +18,9 @@ var arrProduct = [];
 var unitprice = 35;
 var line = '';
 var product = '';
+var clause = ''; //购票条款
+var date1 = _today;
+var date2 = '';
 
 Page({
    data: {
@@ -23,7 +28,11 @@ Page({
     indexYL:0,
     date:_today,
     default_date:_today,
-    isShowToast: false
+    isShowToast: false,
+    showReturn: false,
+    date1:_today,
+    date2:'',
+    default_date:_today
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -31,7 +40,7 @@ Page({
     var arr2 = []
     var that = this
     wx.request({
-        url: 'https://service.huiyoulun.com/service/getCal', 
+        url: 'https://service.huiyoulun.com/service/getSHship', 
         method: 'POST',
         header: {
             'content-type': 'application/json'
@@ -39,8 +48,8 @@ Page({
         success: function(res) {
             var d = res.data
             for(var i in d){
-              arr1.push(d[i].datestart+" "+d[i].cruiseName)
-              arrL.push(d[i].datestart+" "+d[i].cruiseName)
+              arr1.push(d[i].cname+" "+d[i].sname)
+              arrL.push(d[i].cname+" "+d[i].sname)
             }           
             line = arrL[0]
             that.setData({  
@@ -55,8 +64,8 @@ Page({
                 success: function(res) {
                     var d = res.data
                     for(var i in d){
-                      arr2.push(d[i].name+" ¥"+d[i].price+" (原价¥"+d[i].original_price+")")
-                      arrProduct.push(d[i].name+" ¥"+d[i].price+" (原价¥"+d[i].original_price+")")
+                      arr2.push(d[i].name+" ¥"+d[i].original_price)
+                      arrProduct.push(d[i].name+" ¥"+d[i].original_price)
                       arrP.push(d[i].price);
                     }     
                     product = arrProduct[0]      
@@ -86,6 +95,9 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
+  checkboxChange: function(e) {
+    clause = e.detail.value
+  },
   weixinpay:function(){
     if(name == ""){
       this.setData({  
@@ -111,8 +123,28 @@ Page({
       });  
       this.showToast();  
       return false
+    }else if(clause != "1"){
+      this.setData({  
+        count: 1500,  
+        toastText: '请勾选同意购票条款',  
+        isShowToast: true
+      });  
+      this.showToast();  
+      return false
     }
     WeixinPay()
+  },
+  bindDateChange1:function(e){
+    this.setData({
+      date1:e.detail.value
+    })
+    date1 = e.detail.value
+  },
+  bindDateChange2:function(e){
+    this.setData({
+      date2:e.detail.value
+    })
+    date2 = e.detail.value
   },
   bindPickerChange: function(e) {
     //console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -121,6 +153,19 @@ Page({
     that.setData({
         index:i
     })
+    if(i > 5){
+      //往返程
+      that.setData({
+        showReturn:true,
+        date2:_today
+      })
+    }else{
+      //单程
+      that.setData({
+        showReturn:false,
+        date2:''
+      })
+    }
     unitprice = arrP[i]
     product = arrProduct[i]
   },
@@ -219,7 +264,9 @@ function WeixinPay(){
                                     num:num,
                                     line:line,
                                     product:product,
-                                    price:unitprice*num
+                                    price:unitprice*num,
+                                    date1:date1,
+                                    date2:date2
                                   },
                                   header: {
                                       'content-type': 'application/json'

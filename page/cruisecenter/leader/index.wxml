@@ -1,0 +1,68 @@
+<block wx:if="{{hasUserInfo === false}}">
+<view class="page">
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">请输入领队证号</view>
+            <input bindinput="bindKeyInputNo" auto-focus/>
+        </view>
+    </view>
+    <button class="page-body-button" type="primary" bindtap="login">登 录</button>
+</view>
+</block>
+
+<block wx:if="{{hasUserInfo === true}}">
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">领队姓名：{{userName}}</view>
+        </view>
+    </view>
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator url="../leader/leader" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">高铁邮轮直通车预订</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator url="../leader/breakfast" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">邮轮领队现场服务点</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator url="../leader/send" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">邮轮派团</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator bindtap="exit" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">退出</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
+    </view>
+</block>
+
+<!--mask-->  
+<view class="toast_mask" wx:if="{{isShowToast}}"></view>  
+<!--以下为toast显示的内容-->  
+<view class="toast_content_box" wx:if="{{isShowToast}}">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+      {{toastText}}  
+    </view>  
+  </view>  
+</view>

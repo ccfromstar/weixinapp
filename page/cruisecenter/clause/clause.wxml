@@ -1,0 +1,20 @@
+<!--page/cruisecenter/clause/clause.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <text class="page__header">预订须知</text>
+        <text class="page__desc">1、购票截止时间为出行日前48小时，车票一经出售，不予退换。</text>
+        <text class="page__desc">2、购票时请务必填写准确的旅客姓名、联系电话、船名、出发日期、人数。</text>
+        <text class="page__desc">3、预定成功后，中心将以短信形式发送出行通知，并于出行前一天以短信方式告知车牌号及现场联系人联系方式，请注意查收并保留短信以供现场工作人员核实。</text>
+        <text class="page__desc">4、请留意车辆出发时间，如因乘客原因错过出发时间，车费不予退还。</text>
+        <text class="page__desc">5、邮轮当天因为特别原因需提早离港的，中心会根据具体的离港时间安排车辆提早抵达站点并提前发车，工作人员将通过短信形式告知，如旅客当天因航班车次而错过出发时间的，予以退还相应费用。</text>
+        <text class="page__desc">6、如果邮轮延误抵达，中心会调整码头车辆的接站时间，并继续提供服务。如果当天16：00以前旅客所搭乘的邮轮仍不能下客，或者能够下客但个别旅客来不及上车的，将退还旅客相应车费，并停止服务。</text>
+        <text class="page__desc">7、其他由于旅客自身原因（包括但不限于买错产品，搭乘其他运输方式）而放弃搭乘的，车费将不予退还。</text>
+        <text class="page__desc">8、如有任何问题，欢迎拨打上海邮轮中心官方电话：66013699</text>
+        <text class="page__space"></text>
+        <text class="page__header">乘车须知</text>
+        <text class="page__desc">1、行车途中请系好安全带并听从随车工作人员指挥，请勿在车厢中随意走动，以免发生危险。</text>
+        <text class="page__desc">2、请保管好自己的随身物品及行李，以免遗失。</text>
+        <text class="page__desc">3、儿童须在成人陪同下乘车。</text>
+        <text class="page__desc">4、车厢内请勿大声喧哗，注意保持车厢整洁，共同创造美好乘车环境。</text>
+    </view>
+</view>

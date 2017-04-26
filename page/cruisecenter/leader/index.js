@@ -1,5 +1,6 @@
-// page/pay/index.js
+var leaderno = ''
 var myDate = new Date(); //日期对象
+myDate.setDate(myDate.getDate()+2);
 var y = myDate.getFullYear(); 
 var m = (((myDate.getMonth()+1)+"").length==1)?"0"+(myDate.getMonth()+1):(myDate.getMonth()+1);
 var d = (((myDate.getDate())+"").length==1)?"0"+(myDate.getDate()):(myDate.getDate());
@@ -16,22 +17,50 @@ var arrProduct = [];
 var unitprice = 35;
 var line = '';
 var product = '';
+var clause = ''; //购票条款
+var date1 = _today;
+var date2 = '';
 
+var app = getApp()
 Page({
-   data: {
+  data: {
+    hasUserInfo: false,
     index:0,
     indexYL:0,
     date:_today,
     default_date:_today,
-    isShowToast: false
+    isShowToast: false,
+    showReturn: false,
+    date1:_today,
+    date2:'',
+    default_date:_today
   },
   onLoad:function(options){
+    var that = this
+    wx.getStorage({
+      key: 'hasUserInfo',
+      success: function(res) {
+          that.setData({  
+              hasUserInfo:res.data
+          })
+          if(res.data){
+              wx.getStorage({
+                key: 'userName',
+                success: function(res) {
+                    that.setData({  
+                        userName:res.data
+                    })
+                } 
+              })
+          }
+      } 
+    })
+    leaderno = ''
     // 页面初始化 options为页面跳转所带来的参数
     var arr1 = []
     var arr2 = []
-    var that = this
     wx.request({
-        url: 'https://service.huiyoulun.com/service/getCal', 
+        url: 'https://service.huiyoulun.com/service/getSHship', 
         method: 'POST',
         header: {
             'content-type': 'application/json'
@@ -39,8 +68,8 @@ Page({
         success: function(res) {
             var d = res.data
             for(var i in d){
-              arr1.push(d[i].datestart+" "+d[i].cruiseName)
-              arrL.push(d[i].datestart+" "+d[i].cruiseName)
+              arr1.push(d[i].cname+" "+d[i].sname)
+              arrL.push(d[i].cname+" "+d[i].sname)
             }           
             line = arrL[0]
             that.setData({  
@@ -86,6 +115,9 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
+  checkboxChange: function(e) {
+    clause = e.detail.value
+  },
   weixinpay:function(){
     if(name == ""){
       this.setData({  
@@ -111,8 +143,28 @@ Page({
       });  
       this.showToast();  
       return false
+    }else if(clause != "1"){
+      this.setData({  
+        count: 1500,  
+        toastText: '请勾选同意购票条款',  
+        isShowToast: true
+      });  
+      this.showToast();  
+      return false
     }
     WeixinPay()
+  },
+  bindDateChange1:function(e){
+    this.setData({
+      date1:e.detail.value
+    })
+    date1 = e.detail.value
+  },
+  bindDateChange2:function(e){
+    this.setData({
+      date2:e.detail.value
+    })
+    date2 = e.detail.value
   },
   bindPickerChange: function(e) {
     //console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -121,6 +173,19 @@ Page({
     that.setData({
         index:i
     })
+    if(i > 5){
+      //往返程
+      that.setData({
+        showReturn:true,
+        date2:_today
+      })
+    }else{
+      //单程
+      that.setData({
+        showReturn:false,
+        date2:''
+      })
+    }
     unitprice = arrP[i]
     product = arrProduct[i]
   },
@@ -147,6 +212,105 @@ Page({
   },
   bindKeyInputNum: function(e) {
    num = e.detail.value
+  },
+  getUserInfo: function () {
+    var that = this
+
+    if (that.hasUserInfo === false) {
+      wx.login({
+        success: _getUserInfo
+      })
+    } else {
+      _getUserInfo()
+    }
+
+    function _getUserInfo() {
+      wx.getUserInfo({
+        success: function (res) {
+          that.setData({
+            hasUserInfo: true,
+            userInfo: res.userInfo
+          })
+          that.update()
+        }
+      })
+    }
+  },
+  login: function () {
+    var that = this
+    if(leaderno == ''){
+      this.setData({  
+        count: 1500,  
+        toastText: '请输入领队证号',  
+        isShowToast: true
+      });  
+      this.showToast();  
+      return false
+    }
+    wx.request({
+        url: 'https://service.huiyoulun.com/service/leaderlogin', 
+        method: 'POST',
+        data: {
+            leaderno:leaderno
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            var d = res.data
+            if(!d[0]){
+              that.setData({  
+                count: 1500,  
+                toastText: '您输入的领队证号有误',  
+                isShowToast: true
+              });  
+              that.showToast();
+              return false
+            }       
+            that.setData({
+              hasUserInfo: true,
+              userName: d[0].name,
+              userId: d[0].id
+            })
+            wx.setStorage({
+              key:"hasUserInfo",
+              data:true
+            })
+            wx.setStorage({
+              key:"userName",
+              data:d[0].name
+            })
+            wx.setStorage({
+              key:"userId",
+              data:d[0].id
+            })
+            wx.setStorage({
+              key:"leaderimg",
+              data:d[0].img
+            })
+        },
+        fail: function(err) {
+            console.log(err)
+        }
+    })
+  },
+  clear: function () {
+    this.setData({
+      hasUserInfo: false,
+      userInfo: {}
+    })
+  },
+  bindKeyInputNo: function(e) {
+   leaderno = e.detail.value
+  },
+  exit: function(e) {
+    wx.removeStorage({
+      key: 'hasUserInfo',
+      success: function(res) {
+        console.log(res.data)
+        wx.navigateBack();
+      } 
+    })
   },
   showToast: function () {  
     var _this = this;  
@@ -193,7 +357,7 @@ function WeixinPay(){
                     data: {
                       bookingNo:_today + Rnd(100,999),
                       //total_fee:num,
-                      total_fee:unitprice*num*100,
+                      total_fee:unitprice*num*100 - num*5*100,
                       openid:openid
                     },
                     header: {
@@ -219,7 +383,9 @@ function WeixinPay(){
                                     num:num,
                                     line:line,
                                     product:product,
-                                    price:unitprice*num
+                                    price:unitprice*num,
+                                    date1:date1,
+                                    date2:date2
                                   },
                                   header: {
                                       'content-type': 'application/json'

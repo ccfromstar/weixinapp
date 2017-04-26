@@ -42,16 +42,16 @@
                                 <text>港口交通</text>
                             </view>
                         </navigator>
-                        <navigator url="wifi/wifi" >
+                        <navigator url="pay/index" >
                             <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_8.png" />
-                                <text>WIFI租赁</text>
+                                <image src="http://www.cruisesh.com/src/image/service_11.png" />
+                                <text>直通车</text>
                             </view>
                         </navigator>
-                        <navigator url="product/product" >
+                        <navigator url="leader/index" >
                             <view class="flex-itemzi">
-                                <image src="http://www.cruisesh.com/src/image/service_6.png" />
-                                <text>邮轮产品</text>
+                                <image src="http://www.cruisesh.com/src/image/service_10.png" />
+                                <text>领队服务</text>
                             </view>
                         </navigator>
                 </view>

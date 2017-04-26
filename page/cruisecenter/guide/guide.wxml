@@ -27,5 +27,14 @@
               </navigator>
             </view>
         </view>
+        <view class="widgets">
+            <view class="widgets__item">
+             <navigator url="../wifi/wifi" >
+                <view id="view" class="widgets__title {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">WIFI租赁</text>
+                </view>
+              </navigator>
+            </view>
+        </view>
     </view>
 </view>

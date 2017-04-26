@@ -19,8 +19,33 @@
         </view>
     </view>
     <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">交通产品选择</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                    {{array[index]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">请选择乘车日期</view>
+            <picker mode="date" value="{{default_date}}" start="{{default_date}}"  bindchange="bindDateChange1">
+                <view class="picker">
+                    {{date1}}
+                </view>
+            </picker>
+            <picker wx:if="{{showReturn}}" value="{{default_date}}" start="{{default_date}}" mode="date"  bindchange="bindDateChange2">
+                <view class="picker">
+                    {{date2}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__bd__top">
        <view class="section">
-            <view class="section__title">邮轮航次</view>
+            <view class="section__title">乘坐的邮轮</view>
             <picker bindchange="bindPickerChangeYL" value="{{indexYL}}" range="{{arrayYL}}">
                 <view class="picker">
                     {{arrayYL[indexYL]}}
@@ -30,12 +55,11 @@
     </view>
     <view class="page__bd__top">
         <view class="section">
-            <view class="section__title">交通产品选择</view>
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                <view class="picker">
-                    {{array[index]}}
-                </view>
-            </picker>
+            <view class="section__title">
+                <checkbox-group bindchange="checkboxChange">
+                    <checkbox value="1" />同意<navigator class="clause" url="../clause/clause" >《购票条款》</navigator>
+                </checkbox-group>
+            </view>
         </view>
     </view>
     <button class="btn_primary" type="primary" bindtap="weixinpay"> 确认支付 </button>

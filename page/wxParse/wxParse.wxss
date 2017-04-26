@@ -205,4 +205,8 @@ view{
     text-indent: 25px;
     margin-bottom:10px;
 }
+.wxParse-img{
+    margin-left:-25px;
+}
+
 

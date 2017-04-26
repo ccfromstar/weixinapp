@@ -1,0 +1,91 @@
+<block wx:if="{{hasUserInfo === false}}">
+<view class="page">
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">请输入领队证号</view>
+            <input bindinput="bindKeyInputNo" auto-focus/>
+        </view>
+    </view>
+    <button class="page-body-button" type="primary" bindtap="login">登 录</button>
+</view>
+</block>
+
+<block wx:if="{{hasUserInfo === true}}">
+<view class="page">
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">乘车联系人姓名</view>
+            <input bindinput="bindKeyInputName"  auto-focus/>
+        </view>
+    </view>
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">乘车联系人手机号</view>
+            <input type="number" bindinput="bindKeyInput"  auto-focus/>
+        </view>
+    </view>
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">乘车总人数</view>
+            <input type="number" bindinput="bindKeyInputNum"  auto-focus/>
+        </view>
+    </view>
+    <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">交通产品选择</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                    {{array[index]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">请选择乘车日期</view>
+            <picker mode="date" value="{{default_date}}" start="{{default_date}}"  bindchange="bindDateChange1">
+                <view class="picker">
+                    {{date1}}
+                </view>
+            </picker>
+            <picker wx:if="{{showReturn}}" value="{{default_date}}" start="{{default_date}}" mode="date"  bindchange="bindDateChange2">
+                <view class="picker">
+                    {{date2}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__bd__top">
+       <view class="section">
+            <view class="section__title">乘坐的邮轮</view>
+            <picker bindchange="bindPickerChangeYL" value="{{indexYL}}" range="{{arrayYL}}">
+                <view class="picker">
+                    {{arrayYL[indexYL]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="page__bd__top">
+        <view class="section">
+            <view class="section__title">
+                <checkbox-group bindchange="checkboxChange">
+                    <checkbox value="1" />同意<navigator class="clause" url="../clause/clause" >《购票条款》</navigator>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+    <button class="btn_primary" type="primary" bindtap="weixinpay"> 游客乘车预订 </button>
+    <button class="btn_primary" type="primary" bindtap="weixinpay_leader"> 领队免费自乘预订 </button>
+</view> 
+</block>
+
+<!--mask-->  
+<view class="toast_mask" wx:if="{{isShowToast}}"></view>  
+<!--以下为toast显示的内容-->  
+<view class="toast_content_box" wx:if="{{isShowToast}}">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+      {{toastText}}  
+    </view>  
+  </view>  
+</view>
